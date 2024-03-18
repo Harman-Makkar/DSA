@@ -1,30 +1,27 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 
 bool isPrime(int n){
-	//Corner Case
-	if(n<=1)
-		return false;
-
-	for(int i=2;i<=sqrt(n);i++)
-		if(n%i==0){
-			return false;
-		}
-        else{
-	        return true;
+    if(n<=1){
+        return false;
+    }
+    
+    for(int i=2;i<=n/2;i++){
+        if(n%i==0){
+            return false;
         }
+    }
+    return true;
 }
 
 int main(){
     int n;
     cin>>n;
+
     if(isPrime(n)){
-        cout<<"true"<<endl;
-    }
+        cout<<"True"<<endl;
+    } 
     else{
-        cout<<"false"<<endl;
+        cout<<"False"<<endl;
     }
-    return 0;
 }
-
-
